@@ -34,11 +34,12 @@ namespace Sm4sh_Hitbox_Generator
                 int _angle = Int32.Parse(angle.Text);
                 int _kbg = Int32.Parse(kbg.Text);
                 int _fkb = 0;
+                int _bkb = Int32.Parse(bkb.Text);
                 if (fkb.Checked)
                 {
-                    _fkb = 1;
+                    _fkb = Int32.Parse(bkb.Text);
+                    _bkb = 0;
                 }
-                int _bkb = Int32.Parse(bkb.Text);
                 int _size = Int32.Parse(size.Text);
                 int _z = Int32.Parse(z.Text);
                 int _y = Int32.Parse(y.Text);

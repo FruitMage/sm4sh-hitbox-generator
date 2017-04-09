@@ -6,3 +6,4 @@ D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Rel
 D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.csproj.GenerateResource.Cache
 D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.exe
 D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.pdb
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.csprojResolveAssemblyReference.cache
