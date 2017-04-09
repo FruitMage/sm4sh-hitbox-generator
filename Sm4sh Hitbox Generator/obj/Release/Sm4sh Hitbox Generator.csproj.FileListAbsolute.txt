@@ -1,0 +1,8 @@
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\bin\Release\Sm4sh Hitbox Generator.exe.config
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\bin\Release\Sm4sh Hitbox Generator.exe
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\bin\Release\Sm4sh Hitbox Generator.pdb
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh_Hitbox_Generator.Form1.resources
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh_Hitbox_Generator.Properties.Resources.resources
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.csproj.GenerateResource.Cache
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.exe
+D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.pdb
