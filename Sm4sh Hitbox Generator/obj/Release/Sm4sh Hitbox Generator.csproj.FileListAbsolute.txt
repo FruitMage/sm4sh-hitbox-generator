@@ -6,3 +6,12 @@ D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Rel
 D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.csproj.GenerateResource.Cache
 D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.exe
 D:\_Visual Studio Programs\Sm4sh Hitbox Generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.pdb
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\bin\Release\Sm4sh Hitbox Generator.exe.config
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.exe
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.pdb
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\bin\Release\Sm4sh Hitbox Generator.exe
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\bin\Release\Sm4sh Hitbox Generator.pdb
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.csprojResolveAssemblyReference.cache
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh_Hitbox_Generator.Form1.resources
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh_Hitbox_Generator.Properties.Resources.resources
+C:\Users\Y2K\VS\Projects\sm4sh-hitbox-generator\Sm4sh Hitbox Generator\obj\Release\Sm4sh Hitbox Generator.csproj.GenerateResource.Cache
