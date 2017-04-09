@@ -287,7 +287,7 @@
             "Air Attack"});
             this.groundair.Location = new System.Drawing.Point(115, 227);
             this.groundair.Name = "groundair";
-            this.groundair.Size = new System.Drawing.Size(120, 21);
+            this.groundair.Size = new System.Drawing.Size(100, 21);
             this.groundair.TabIndex = 36;
             // 
             // directindirect
@@ -296,9 +296,9 @@
             this.directindirect.Items.AddRange(new object[] {
             "Direct Attack",
             "Indirect Attack"});
-            this.directindirect.Location = new System.Drawing.Point(241, 227);
+            this.directindirect.Location = new System.Drawing.Point(221, 227);
             this.directindirect.Name = "directindirect";
-            this.directindirect.Size = new System.Drawing.Size(120, 21);
+            this.directindirect.Size = new System.Drawing.Size(100, 21);
             this.directindirect.TabIndex = 37;
             // 
             // generate
@@ -477,7 +477,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(238, 211);
+            this.label21.Location = new System.Drawing.Point(218, 211);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(75, 13);
             this.label21.TabIndex = 59;
