@@ -53,9 +53,13 @@ namespace Sm4sh_Hitbox_Generator
                 int _shielddamage = Int32.Parse(shielddamage.Text);
                 int _sfxtype = Int32.Parse(sfxtype.Text);
                 int _groundair = 0;
-                if (groundair.Text == "Air Attack")
+                if (groundair.Text == "Ground Only")
                 {
                     _groundair = 1;
+                }
+                if (groundair.Text == "Air Only")
+                {
+                    _groundair = 2;
                 }
                 int _directindirect = 0;
                 if (directindirect.Text == "Indirect Attack")
@@ -213,6 +217,11 @@ namespace Sm4sh_Hitbox_Generator
             {
                 _effect = 36;
             }
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            output.Text = "";
         }
     }
 }

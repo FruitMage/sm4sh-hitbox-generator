@@ -72,9 +72,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.hitboxtype = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.hitboxtype = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -285,8 +286,9 @@
             // 
             this.groundair.FormattingEnabled = true;
             this.groundair.Items.AddRange(new object[] {
-            "Ground Attack",
-            "Air Attack"});
+            "Both",
+            "Ground Only",
+            "Air Only"});
             this.groundair.Location = new System.Drawing.Point(115, 271);
             this.groundair.Name = "groundair";
             this.groundair.Size = new System.Drawing.Size(100, 21);
@@ -472,9 +474,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(112, 255);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 13);
+            this.label20.Size = new System.Drawing.Size(92, 13);
             this.label20.TabIndex = 58;
-            this.label20.Text = "Ground/Air";
+            this.label20.Text = "Ground/Air Limiter";
             // 
             // label21
             // 
@@ -538,15 +540,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hitbox Parameters";
             // 
-            // groupBox2
+            // label4
             // 
-            this.groupBox2.Controls.Add(this.output);
-            this.groupBox2.Location = new System.Drawing.Point(12, 349);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(542, 201);
-            this.groupBox2.TabIndex = 61;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Output";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Hitbox Type";
             // 
             // hitboxtype
             // 
@@ -561,20 +562,32 @@
             this.hitboxtype.Size = new System.Drawing.Size(129, 21);
             this.hitboxtype.TabIndex = 60;
             // 
-            // label4
+            // groupBox2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Hitbox Type";
+            this.groupBox2.Controls.Add(this.clear);
+            this.groupBox2.Controls.Add(this.output);
+            this.groupBox2.Location = new System.Drawing.Point(12, 349);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(542, 229);
+            this.groupBox2.TabIndex = 61;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Output";
+            // 
+            // clear
+            // 
+            this.clear.Location = new System.Drawing.Point(9, 197);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(75, 23);
+            this.clear.TabIndex = 6;
+            this.clear.Text = "Clear Output";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 561);
+            this.ClientSize = new System.Drawing.Size(565, 590);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -637,6 +650,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox hitboxtype;
+        private System.Windows.Forms.Button clear;
     }
 }
 
