@@ -41,14 +41,14 @@ namespace Sm4sh_Hitbox_Generator
                     _bkb = 0;
                     _kbg = 0;
                 }
-                int _size = Int32.Parse(size.Text);
-                int _z = Int32.Parse(z.Text);
-                int _y = Int32.Parse(y.Text);
-                int _x = Int32.Parse(x.Text);
+                string _size = size.Text;
+                string _z = z.Text;
+                string _y = y.Text;
+                string _x = x.Text;
                 setEffect();
-                int _trip = Int32.Parse(trip.Text);
-                int _hitlag = Int32.Parse(hitlag.Text);
-                int _sdi = Int32.Parse(sdi.Text);
+                string _trip = trip.Text;
+                string _hitlag = hitlag.Text;
+                string _sdi = sdi.Text;
                 int _clang = Int32.Parse(clang.Text);
                 int _shielddamage = Int32.Parse(shielddamage.Text);
                 int _sfxtype = Int32.Parse(sfxtype.Text);
