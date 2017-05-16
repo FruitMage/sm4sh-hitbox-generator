@@ -27,6 +27,7 @@ namespace Sm4sh_Hitbox_Generator
         {
             try
             {
+                //Basic params
                 int _id = Int32.Parse(id.Text);
                 int _part = Int32.Parse(part.Text);
                 int _bone = Int32.Parse(bone.Text);
@@ -49,9 +50,11 @@ namespace Sm4sh_Hitbox_Generator
                 string _trip = trip.Text;
                 string _hitlag = hitlag.Text;
                 string _sdi = sdi.Text;
+                int _rebound = Int32.Parse(rebound.Text);
                 int _clang = Int32.Parse(clang.Text);
                 int _shielddamage = Int32.Parse(shielddamage.Text);
                 int _sfxtype = Int32.Parse(sfxtype.Text);
+                int _sfxid = Int32.Parse(sfxid.Text);
                 int _groundair = 0;
                 if (groundair.Text == "Ground Only")
                 {
@@ -66,30 +69,150 @@ namespace Sm4sh_Hitbox_Generator
                 {
                     _directindirect = 1;
                 }
+                int _type = Int32.Parse(type.Text);
 
+                //Generate Hitbox & get other params
                 if (hitboxtype.Text == "Hitbox")
                 {
-                    output.Text = output.Text + "Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Unknown=0x0, SFXType=0x" + _sfxtype.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Unknown=0x0, Unknown=0x0)\n";
+                    //Hitbox gen
+                    output.Text = output.Text + "Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Rebound=0x" + _rebound.ToString("X") + ", ShieldDamage=0x" + _shielddamage.ToString("X") + ", SFXType=0x" + _sfxtype.ToString("X") + ", SFXID=0x" + _sfxid.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Type=0x" + _type.ToString("X") + ")\n";
                 }
+
                 if (hitboxtype.Text == "Special Hitbox")
                 {
-                    output.Text = output.Text + "Special_Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Unknown=0x0, SFXType=0x" + _sfxtype.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0)\n";
+                    //Additional params
+                    int _blockable = 0;
+                    int _reflectable = 0;
+                    int _absorbable = 0;
+                    int _rehit_rate = Int32.Parse(rehitrate.Text);
+                    int _piercing = 0;
+                    int _reversable = 0;
+                    int _grippy = 0;
+                    int _friendly_fire = 0;
+                    int _hitlag_disable = 0;
+                    int _gfx_disable = 0;
+                    int _flinchless = 0;
+                    if (blockable.Checked == true)
+                    {
+                        _blockable = 1;
+                    }
+                    if (reflectable.Checked == true)
+                    {
+                        _reflectable = 1;
+                    }
+                    if (absorbable.Checked == true)
+                    {
+                        _absorbable = 1;
+                    }
+                    if (piercing.Checked == true)
+                    {
+                        _piercing = 1;
+                    }
+                    if (grippy.Checked == true)
+                    {
+                        _grippy = 1;
+                    }
+                    if (friendlyfire.Checked == true)
+                    {
+                        _friendly_fire = 1;
+                    }
+                    if (hitlagdisable.Checked == true)
+                    {
+                        _hitlag_disable = 1;
+                    }
+                    if (gfxdisable.Checked == true)
+                    {
+                        _gfx_disable = 1;
+                    }
+                    if (flinchless.Checked == true)
+                    {
+                        _flinchless = 1;
+                    }
+
+                    //Hitbox gen
+
+                    if (specialhitbox2.Checked == false)
+                    {
+                        output.Text = output.Text + "Special_Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Rebound=0x" + _rebound.ToString("X") + ", ShieldDamage=0x" + _shielddamage.ToString("X") + ", SFXType=0x" + _sfxtype.ToString("X") + ", SFXID=0x" + _sfxid.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Type=0x" + _type.ToString("X") + ", Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Blockable=0x" + _blockable.ToString("X") + ", Reflectable=0x" + _reflectable.ToString("X") + ", Absorbable=0x" + _absorbable.ToString("X") + ", Rehit_Rate=0x" + _rehit_rate.ToString("X") + ", Piercing=0x" + _piercing.ToString("X") + ", Unknown=0x0, Reversable=0x" + _reversable.ToString("X") + ", Grippy=0x" + _grippy.ToString("X") + ", Friendly_Fire=0x" + _friendly_fire.ToString("X") + ", Hitlag_Disable=0x" + _hitlag_disable.ToString("X") + ", GFX_Disable=0x" + _gfx_disable.ToString("X") + ", Flinchless=0x" + _flinchless.ToString("X") + ", Unknown=0x0)\n";
+                    }
+                    if (specialhitbox2.Checked == true)
+                    {
+                        output.Text = output.Text + "Special_Hitbox2(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Rebound=0x" + _rebound.ToString("X") + ", ShieldDamage=0x" + _shielddamage.ToString("X") + ", SFXType=0x" + _sfxtype.ToString("X") + ", SFXID=0x" + _sfxid.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Type=0x" + _type.ToString("X") + ", Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Blockable=0x" + _blockable.ToString("X") + ", Reflectable=0x" + _reflectable.ToString("X") + ", Absorbable=0x" + _absorbable.ToString("X") + ", Rehit_Rate=0x" + _rehit_rate.ToString("X") + ", Piercing=0x" + _piercing.ToString("X") + ", Unknown=0x0, Reversable=0x" + _reversable.ToString("X") + ", Grippy=0x" + _grippy.ToString("X") + ", Friendly_Fire=0x" + _friendly_fire.ToString("X") + ", Hitlag_Disable=0x" + _hitlag_disable.ToString("X") + ", GFX_Disable=0x" + _gfx_disable.ToString("X") + ", Flinchless=0x" + _flinchless.ToString("X") + ", Unknown=0x0)\n";
+                    }
                 }
+
                 if (hitboxtype.Text == "Extended Hitbox")
                 {
-                    output.Text = output.Text + "Extended_Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Unknown=0x0, SFXType=0x" + _sfxtype.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0)\n";
+                    //Additional params
+                    int _xextent = Int32.Parse(xextent.Text);
+                    int _yextent = Int32.Parse(yextent.Text);
+                    int _zextent = Int32.Parse(zextent.Text);
+
+                    //Hitbox gen
+                    output.Text = output.Text + "Extended_Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Rebound=0x" + _rebound.ToString("X") + ", ShieldDamage=0x" + _shielddamage.ToString("X") + ", SFXType=0x" + _sfxtype.ToString("X") + ", SFXID=0x" + _sfxid.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Type=0x" + _type.ToString("X") + ", Z=0x" + _zextent.ToString("X") + ", Y=0x" + _yextent.ToString("X") + ", X=0x" + _xextent.ToString("X") + ")\n";
                 }
+
                 if (hitboxtype.Text == "Extended Special Hitbox")
                 {
-                    output.Text = output.Text + "Extended_Special_Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Unknown=0x0, SFXType=0x" + _sfxtype.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0)\n";
-                }
-                if (hitboxtype.Text != "Hitbox" && hitboxtype.Text != "Extended Hitbox" && hitboxtype.Text != "Special Hitbox" && hitboxtype.Text != "Extended Special Hitbox")
-                {
-                    MessageBox.Show("Error: Invalid Hitbox type", "Sm4sh Hitbox Generator");
+                    //Additional params
+                    int _blockable = 0;
+                    int _reflectable = 0;
+                    int _absorbable = 0;
+                    int _rehit_rate = Int32.Parse(rehitrate.Text);
+                    int _piercing = 0;
+                    int _reversable = 0;
+                    int _grippy = 0;
+                    int _friendly_fire = 0;
+                    int _hitlag_disable = 0;
+                    int _gfx_disable = 0;
+                    int _flinchless = 0;
+                    if (blockable.Checked == true)
+                    {
+                        _blockable = 1;
+                    }
+                    if (reflectable.Checked == true)
+                    {
+                        _reflectable = 1;
+                    }
+                    if (absorbable.Checked == true)
+                    {
+                        _absorbable = 1;
+                    }
+                    if (piercing.Checked == true)
+                    {
+                        _piercing = 1;
+                    }
+                    if (grippy.Checked == true)
+                    {
+                        _grippy = 1;
+                    }
+                    if (friendlyfire.Checked == true)
+                    {
+                        _friendly_fire = 1;
+                    }
+                    if (hitlagdisable.Checked == true)
+                    {
+                        _hitlag_disable = 1;
+                    }
+                    if (gfxdisable.Checked == true)
+                    {
+                        _gfx_disable = 1;
+                    }
+                    if (flinchless.Checked == true)
+                    {
+                        _flinchless = 1;
+                    }
+                    string _xextent = xextent.Text;
+                    string _yextent = yextent.Text;
+                    string _zextent = zextent.Text;
+
+                    //Hitbox gen
+                    output.Text = output.Text + "Extended_Special_Hitbox(ID=0x" + _id.ToString("X") + ", Part=0x" + _part.ToString("X") + ", Bone=0x" + _bone.ToString("X") + ", Damage=" + _damage + ", Angle=0x" + _angle.ToString("X") + ", KBG=0x" + _kbg.ToString("X") + ", FKB=0x" + _fkb.ToString("X") + ", BKB=0x" + _bkb.ToString("X") + ", Size=" + _size + ", Z=" + _z + ", Y=" + _y + ", X=" + _x + ", Effect=0x" + _effect.ToString("X") + ", Trip=" + _trip + ", Hitlag=" + _hitlag + ", SDI=" + _sdi + ", Clang=0x" + _clang.ToString("X") + ", Rebound=0x" + _rebound.ToString("X") + ", ShieldDamage=0x" + _shielddamage.ToString("X") + ", SFXType=0x" + _sfxtype.ToString("X") + ", SFXID=0x" + _sfxid.ToString("X") + ", Ground/Air=0x" + _groundair.ToString("X") + ", Direct/Indirect=0x" + _directindirect.ToString("X") + ", Type=0x" + _type.ToString("X") + ", Unknown=0x0, Unknown=0x0, Unknown=0x0, Unknown=0x0, Blockable=0x" + _blockable.ToString("X") + ", Reflectable=0x" + _reflectable.ToString("X") + ", Absorbable=0x" + _absorbable.ToString("X") + ", Rehit_Rate=0x" + _rehit_rate.ToString("X") + ", Piercing=0x" + _piercing.ToString("X") + ", Unknown=0x0, Reversable=0x" + _reversable.ToString("X") + ", Grippy=0x" + _grippy.ToString("X") + ", Friendly_Fire=0x" + _friendly_fire.ToString("X") + ", Hitlag_Disable=0x" + _hitlag_disable.ToString("X") + ", GFX_Disable=0x" + _gfx_disable.ToString("X") + ", Flinchless=0x" + _flinchless.ToString("X") + ", Z=" + _zextent + ", Y=" + _yextent + ", X=" + _xextent + ")\n";
                 }
             }
             catch
             {
+                //Error message, duh
                 MessageBox.Show("Error: Could not parse values", "Sm4sh HitBox Generator");
             }
         }
@@ -222,6 +345,44 @@ namespace Sm4sh_Hitbox_Generator
         private void clear_Click(object sender, EventArgs e)
         {
             output.Text = "";
+        }
+
+        private void hitboxtype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Hitbox type testing and stuff
+            if (hitboxtype.Text == "Hitbox")
+            {
+                unihitboxparam.Enabled = true;
+                outputcontainer.Enabled = true;
+                extendhitboxparam.Enabled = false;
+                spechitboxparam.Enabled = false;
+            }
+            if (hitboxtype.Text == "Special Hitbox")
+            {
+                unihitboxparam.Enabled = true;
+                outputcontainer.Enabled = true;
+                extendhitboxparam.Enabled = false;
+                spechitboxparam.Enabled = true;
+            }
+            if (hitboxtype.Text == "Extended Hitbox")
+            {
+                unihitboxparam.Enabled = true;
+                outputcontainer.Enabled = true;
+                extendhitboxparam.Enabled = true;
+                spechitboxparam.Enabled = false;
+            }
+            if (hitboxtype.Text == "Extended Special Hitbox")
+            {
+                unihitboxparam.Enabled = true;
+                outputcontainer.Enabled = true;
+                extendhitboxparam.Enabled = true;
+                spechitboxparam.Enabled = true;
+            }
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
